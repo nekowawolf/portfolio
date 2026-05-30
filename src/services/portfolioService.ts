@@ -3,7 +3,7 @@ import { Portfolio } from "@/types/portfolio"
 const API = process.env.NEXT_PUBLIC_API_BASE_URL
 
 export const getPortfolio = async (): Promise<Portfolio> => {
-  const res = await fetch(`${API}/airdrop/portfolio`, {
+  const res = await fetch(`${API}/portfolio`, {
     cache: 'no-store'
   })
 
