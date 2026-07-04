@@ -56,7 +56,7 @@ export default function RecentProjects() {
 
                 <Link
                   href={`/projects/${project.id}`}
-                  className="bg-blue-600 hover:bg-blue-700 transition-colors p-2 rounded-full flex-shrink-0 ml-2"
+                  className="bg-blue-600 hover:bg-blue-700 transition-colors p-2 rounded-full flex-shrink-0 ml-2 cursor-pointer"
                 >
                   <FiArrowRight className="w-5 h-5 text-white" />
                 </Link>

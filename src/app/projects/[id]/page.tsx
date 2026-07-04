@@ -91,7 +91,7 @@ export default async function ProjectPage({ params }: Props) {
         <div className="space-y-6">
           <Link 
             href="/"
-            className="inline-flex items-center gap-2 text-fill-color/60 hover:text-fill-color transition-colors"
+            className="cursor-pointer inline-flex items-center gap-2 text-fill-color/60 hover:text-fill-color transition-colors"
           >
             <FiArrowLeft className="w-5 h-5" />
             <span>Back to Portfolio</span>
@@ -208,7 +208,7 @@ export default async function ProjectPage({ params }: Props) {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all text-sm"
+              className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all text-sm cursor-pointer"
             >
               <FiExternalLink className="w-4 h-4" />
               Visit Project
@@ -220,7 +220,7 @@ export default async function ProjectPage({ params }: Props) {
               href={project.github_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 card-color hover:bg-white/5 text-fill-color rounded-lg font-medium transition-all text-sm"
+              className="flex items-center gap-2 px-4 py-2 card-color hover:bg-white/5 text-fill-color rounded-lg font-medium transition-all text-sm cursor-pointer"
             >
               <FaGithub className="w-4 h-4" />
               View Source
