@@ -1,6 +1,6 @@
 'use client'
 
-import Image from "next/image"
+
 import { usePortfolio } from "@/hooks/usePortfolio"
 import SkillsSkeleton from "@/components/skeletons/SkillsSkeleton"
 
@@ -12,7 +12,7 @@ function TechStack({ tech }: { tech: any[] }) {
       <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-thin">
         {tech.map((skill) => (
           <div key={skill.id} className="flex-shrink-0">
-            <Image
+            <img
               src={skill.icon_url}
               alt={skill.name}
               width={50}
@@ -34,7 +34,7 @@ function DesignTools({ design }: { design: any[] }) {
       <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-thin">
         {design.map((skill) => (
           <div key={skill.id} className="flex-shrink-0">
-            <Image
+            <img
               src={skill.icon_url}
               alt={skill.name}
               width={50}

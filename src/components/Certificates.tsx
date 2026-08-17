@@ -2,7 +2,7 @@
 
 import { usePortfolio } from "@/hooks/usePortfolio"
 import CertificatesSkeleton from "@/components/skeletons/CertificatesSkeleton"
-import Image from "next/image"
+
 
 export default function Certificates() {
   const { data, loading } = usePortfolio()
@@ -24,13 +24,10 @@ export default function Certificates() {
               className="flex-shrink-0 w-[280px] md:w-[320px] card-color2 rounded-2xl overflow-hidden border border-color group hover:border-blue-500 transition-all duration-300"
             >
               <div className="h-[160px] relative">
-                <Image
+                <img
                   src={cert.image_url}
                   alt={cert.title || 'Certificate'}
-                  fill
-                  className="object-cover"
-                  sizes="320px"
-                  unoptimized
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
