@@ -3,9 +3,9 @@
 :root {
   --body-color: #111827;
   --fill-color: #ffffff;
-  --card-color: #243049;
+  --card-color: #1a2540;
   --border-color: #3d4f6f;
-  --card-color2: #1a1f35;
+  --card-color2: #161e34d7;
   --border-divider: rgba(255, 255, 255, 0.1);
   --stack-chip-bg: rgba(59, 130, 246, 0.1);
   --stack-chip-text: #60a5fa;
@@ -17,7 +17,7 @@
   --fill-color: #111827;
   --card-color: #ffffff;
   --border-color: #959090;
-  --card-color2: #f1f5f9;
+  --card-color2: rgba(17, 21, 40, 0.05);
   --border-divider: rgba(0, 0, 0, 0.1);
   --stack-chip-bg: rgba(37, 99, 235, 0.18);
   --stack-chip-text: #1d4ed8;
