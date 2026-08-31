@@ -53,7 +53,7 @@ const AssetSection = ({ title, data }: { title: string, data?: VisualAsset }) =>
       <h3 className="text-xl font-bold text-fill-color border-l-4 border-blue-500 pl-3">{title}</h3>
       <div className="card-color rounded-2xl p-6 border border-color space-y-4">
         {img && (
-          <div className="rounded-xl overflow-hidden border border-color/30">
+          <div className="rounded-xl overflow-hidden">
             <img src={img} alt={title} width={800} height={600} className="w-full h-auto object-cover" />
           </div>
         )}

@@ -7,9 +7,10 @@ import Link from "next/link"
 
 
 export default function RecentDesigns() {
-  const { data } = usePortfolio()
+  const { data, loading } = usePortfolio()
 
-  if (!data) return <DesignsSkeleton />
+  if (loading) return <DesignsSkeleton />
+  if (!data || data.designs.length === 0) return null
 
   return (
     <div className="card-color rounded-3xl p-6 md:p-8 border border-color">
