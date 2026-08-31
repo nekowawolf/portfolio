@@ -4,6 +4,7 @@ import { notFound } from "next/navigation"
 import { FiArrowLeft, FiExternalLink } from "react-icons/fi"
 import { FaGithub } from "react-icons/fa";
 import { ProjectDetails } from "@/types/portfolio"
+import ZoomableImage from "@/components/ZoomableImage"
 
 
 type Props = {
@@ -72,7 +73,7 @@ export default async function ProjectPage({ params }: Props) {
         <div className="card-color rounded-2xl p-6 border border-color space-y-4">
           {sanitizeUrl(data?.image_url) && (
             <div className="rounded-xl overflow-hidden">
-              <img src={sanitizeUrl(data?.image_url)} alt={title} width={800} height={600} className="w-full h-auto object-cover" />
+              <ZoomableImage src={sanitizeUrl(data?.image_url)} alt={title} imageClassName="w-full h-auto object-cover" />
             </div>
           )}
           <p className="text-fill-color/80 leading-relaxed whitespace-pre-line">
@@ -131,10 +132,11 @@ export default async function ProjectPage({ params }: Props) {
                     key={index}
                     className="flex-shrink-0 w-[85vw] md:w-[600px] aspect-video rounded-xl overflow-hidden border border-color snap-center bg-black/20 relative"
                   >
-                    <img 
+                    <ZoomableImage 
                       src={shot} 
                       alt={`Screenshot ${index + 1}`} 
-                      className="w-full h-full object-contain"
+                      className="w-full h-full"
+                      imageClassName="w-full h-full object-cover"
                     />
                   </div>
                 ))}

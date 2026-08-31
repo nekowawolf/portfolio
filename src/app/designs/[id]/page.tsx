@@ -3,6 +3,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { FiArrowLeft, FiExternalLink } from "react-icons/fi"
 import { VisualAsset } from "@/types/portfolio"
+import ZoomableImage from "@/components/ZoomableImage"
 
 
 type Props = {
@@ -54,7 +55,7 @@ const AssetSection = ({ title, data }: { title: string, data?: VisualAsset }) =>
       <div className="card-color rounded-2xl p-6 border border-color space-y-4">
         {img && (
           <div className="rounded-xl overflow-hidden">
-            <img src={img} alt={title} width={800} height={600} className="w-full h-auto object-cover" />
+            <ZoomableImage src={img} alt={title} imageClassName="w-full h-auto object-cover" />
           </div>
         )}
         {desc && (
@@ -118,10 +119,11 @@ export default async function DesignPage({ params }: Props) {
                     key={index}
                     className="flex-shrink-0 w-[85vw] md:w-[600px] aspect-video rounded-xl overflow-hidden border border-color snap-center bg-black/20 relative"
                   >
-                    <img 
+                    <ZoomableImage 
                       src={shot} 
                       alt={`Screenshot ${index + 1}`} 
-                      className="w-full h-full object-contain"
+                      className="w-full h-full"
+                      imageClassName="w-full h-full object-cover"
                     />
                   </div>
                 ))}
