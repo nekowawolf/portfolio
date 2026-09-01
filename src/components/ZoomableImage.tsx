@@ -40,7 +40,7 @@ export default function ZoomableImage({ src, alt, className = '', imageClassName
         <img src={src} alt={alt} className={imageClassName} />
         {/* Hover overlay icon */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-          <div className="bg-black/50 p-3 rounded-full text-white backdrop-blur-md">
+          <div className="bg-blue-600 p-3 rounded-full text-white shadow-lg">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg>
           </div>
         </div>
@@ -59,7 +59,7 @@ export default function ZoomableImage({ src, alt, className = '', imageClassName
               onClick={(e) => e.stopPropagation()}
             />
             <button 
-              className="absolute top-4 right-4 md:top-6 md:right-16 text-white/70 hover:text-white bg-black/40 hover:bg-black/80 rounded-full p-3 backdrop-blur-md transition-all"
+              className="absolute top-4 right-4 md:top-6 md:right-16 text-white/70 hover:text-white bg-black/40 hover:bg-black/80 rounded-full p-3 backdrop-blur-md transition-all cursor-pointer"
               onClick={(e) => {
                 e.stopPropagation()
                 setIsOpen(false)

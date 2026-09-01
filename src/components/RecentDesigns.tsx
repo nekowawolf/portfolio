@@ -1,7 +1,6 @@
 'use client'
 
 import { usePortfolio } from "@/hooks/usePortfolio"
-import { FiArrowRight } from "react-icons/fi"
 import DesignsSkeleton from "@/components/skeletons/DesignsSkeleton"
 import Link from "next/link"
 
@@ -21,9 +20,10 @@ export default function RecentDesigns() {
       <div className="relative">
         <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin">
           {data.designs.map((design) => (
-            <div
+            <Link
+              href={`/designs/${design.id}`}
               key={design.id}
-              className="flex-shrink-0 w-[280px] md:w-[320px] card-color2 rounded-2xl overflow-hidden border border-color group hover:border-blue-500 transition-all duration-300"
+              className="flex-shrink-0 w-[280px] md:w-[320px] card-color2 rounded-2xl overflow-hidden border border-color group hover:!border-blue-600 transition-all duration-300 block"
             >
               <div className="h-[160px] relative">
                 <img
@@ -38,28 +38,26 @@ export default function RecentDesigns() {
                   <h3 className="text-fill-color font-bold text-lg">
                     {design.title}
                   </h3>
-                  <p className="text-fill-color/60 text-sm mt-1">
+                  <p className="text-fill-color/60 text-sm mt-1 line-clamp-2">
                     {design.description}
                   </p>
                   {design.tools && design.tools.length > 0 && (
-                    <div className="mt-2 flex flex-wrap gap-2">
+                    <div className="mt-2 flex flex-wrap gap-2 items-center">
                       {design.tools.slice(0, 4).map((tool, idx) => (
                         <span key={idx} className="stack-chip text-[10px] font-medium">
                           {tool}
                         </span>
                       ))}
+                      {design.tools.length > 4 && (
+                        <span className="text-[10px] px-2 py-0.5 rounded-md border border-color bg-card-color text-fill-color/70 font-bold">
+                          +{design.tools.length - 4}
+                        </span>
+                      )}
                     </div>
                   )}
                 </div>
-
-                <Link
-                  href={`/designs/${design.id}`}
-                  className="bg-blue-600 hover:bg-blue-700 transition-colors p-2 rounded-full flex-shrink-0 ml-2 cursor-pointer"
-                >
-                  <FiArrowRight className="w-5 h-5 text-white" />
-                </Link>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

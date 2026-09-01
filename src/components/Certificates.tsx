@@ -2,6 +2,7 @@
 
 import { usePortfolio } from "@/hooks/usePortfolio"
 import CertificatesSkeleton from "@/components/skeletons/CertificatesSkeleton"
+import ZoomableImage from "@/components/ZoomableImage"
 
 
 export default function Certificates() {
@@ -24,10 +25,11 @@ export default function Certificates() {
               className="flex-shrink-0 w-[280px] md:w-[320px] card-color2 rounded-2xl overflow-hidden border border-color group hover:border-blue-500 transition-all duration-300"
             >
               <div className="h-[160px] relative">
-                <img
+                <ZoomableImage
                   src={cert.image_url}
                   alt={cert.title || 'Certificate'}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full"
+                  imageClassName="w-full h-full object-cover"
                 />
               </div>
             </div>
