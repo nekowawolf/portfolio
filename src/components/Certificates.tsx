@@ -21,7 +21,7 @@ export default function Certificates() {
         <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin">
           {data.certificates.map((cert) => (
             <div
-              key={cert.id}
+              key={cert._id}
               className="flex-shrink-0 w-[280px] md:w-[320px] card-color2 rounded-2xl overflow-hidden border border-color group hover:border-blue-500 transition-all duration-300"
             >
               <div className="h-[160px] relative">

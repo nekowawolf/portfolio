@@ -69,7 +69,7 @@ const AssetSection = ({ title, data }: { title: string, data?: VisualAsset }) =>
 export default async function DesignPage({ params }: Props) {
   const { id } = await params
   const portfolio = await getPortfolio()
-  const design = portfolio.designs.find((d) => d.id === id)
+  const design = portfolio.designs.find((d) => d._id === id)
 
   if (!design) {
     notFound()

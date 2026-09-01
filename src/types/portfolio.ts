@@ -2,12 +2,14 @@ export interface BaseItem {
   id: string
 }
 
-export interface Certificate extends BaseItem {
+export interface Certificate {
+  _id: string
   title: string
   image_url: string
 }
 
-export interface Design extends BaseItem {
+export interface Design {
+  _id: string
   title: string
   description: string
   image_url: string
@@ -31,7 +33,8 @@ export interface VisualAsset {
   description?: string
 }
 
-export interface Project extends BaseItem {
+export interface Project {
+  _id: string
   title: string
   description: string
   image_url: string

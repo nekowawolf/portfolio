@@ -52,7 +52,7 @@ function getVideoType(url: string) {
 export default async function ProjectPage({ params }: Props) {
   const { id } = await params
   const portfolio = await getPortfolio()
-  const project = portfolio.projects.find((p) => p.id === id)
+  const project = portfolio.projects.find((p) => p._id === id)
 
   if (!project) {
     notFound()

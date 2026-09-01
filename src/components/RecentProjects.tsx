@@ -21,8 +21,8 @@ export default function RecentProjects() {
         <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin">
           {data.projects.map((project) => (
             <Link
-              href={`/projects/${project.id}`}
-              key={project.id}
+              href={`/projects/${project._id}`}
+              key={project._id}
               className="flex-shrink-0 w-[280px] md:w-[320px] card-color2 rounded-2xl overflow-hidden border border-color group hover:!border-blue-600 transition-all duration-300 block"
             >
               <div className="h-[160px] relative">

@@ -21,8 +21,8 @@ export default function RecentDesigns() {
         <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin">
           {data.designs.map((design) => (
             <Link
-              href={`/designs/${design.id}`}
-              key={design.id}
+              href={`/designs/${design._id}`}
+              key={design._id}
               className="flex-shrink-0 w-[280px] md:w-[320px] card-color2 rounded-2xl overflow-hidden border border-color group hover:!border-blue-600 transition-all duration-300 block"
             >
               <div className="h-[160px] relative">
