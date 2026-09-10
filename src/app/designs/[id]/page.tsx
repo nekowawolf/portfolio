@@ -1,7 +1,8 @@
 import { getPortfolio } from "@/services/portfolioService"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { FiArrowLeft, FiExternalLink } from "react-icons/fi"
+import { FiArrowLeft } from "react-icons/fi"
+import { FaGlobe, FaGithub } from "react-icons/fa"
 import { VisualAsset } from "@/types/portfolio"
 import ZoomableImage from "@/components/ZoomableImage"
 import FormattedText from "@/components/FormattedText"
@@ -90,21 +91,47 @@ export default async function DesignPage({ params }: Props) {
           </Link>
 
           <div className="space-y-4">
-            <h1 className="text-3xl md:text-4xl font-extrabold text-fill-color">
+            <h1 className="text-2xl md:text-4xl font-extrabold text-fill-color">
               {design.title}
             </h1>
-            <p className="text-fill-color/80 text-lg">{design.description}</p>
+            <FormattedText 
+              text={design.description} 
+              className="text-fill-color/80 text-base whitespace-pre-line" 
+            />
             
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex flex-wrap items-center gap-1.5 md:gap-2">
               {design.category && (
-                <span className="stack-chip text-sm font-medium">{design.category}</span>
+                <span className="stack-chip text-[11px] md:text-sm px-2 py-0.5 md:px-3 md:py-1 font-medium">{design.category}</span>
               )}
               {design.tools && design.tools.length > 0 && (
                 <>
                   {design.tools.map((tool, idx) => (
-                    <span key={idx} className="stack-chip text-sm font-medium">{tool}</span>
+                    <span key={idx} className="stack-chip text-[11px] md:text-sm px-2 py-0.5 md:px-3 md:py-1 font-medium">{tool}</span>
                   ))}
                 </>
+              )}
+            </div>
+
+            <div className="flex items-center gap-4 pt-1 md:pt-2">
+              {design.link && (
+                <a
+                  href={design.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="opacity-70 hover:opacity-100 transition-opacity text-fill-color"
+                >
+                  <FaGlobe className="w-5 h-5" />
+                </a>
+              )}
+              {("github_url" in design) && (design as any).github_url && (
+                <a
+                  href={(design as any).github_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="opacity-70 hover:opacity-100 transition-opacity text-fill-color"
+                >
+                  <FaGithub className="w-5 h-5" />
+                </a>
               )}
             </div>
           </div>
@@ -172,19 +199,7 @@ export default async function DesignPage({ params }: Props) {
           </div>
         )}
 
-        <div className="flex flex-wrap gap-4 pt-8 justify-center">
-          {design.link && (
-            <a
-              href={design.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all text-sm cursor-pointer"
-            >
-              <FiExternalLink className="w-4 h-4" />
-              Visit Design
-            </a>
-          )}
-        </div>
+
       </div>
     </main>
   )

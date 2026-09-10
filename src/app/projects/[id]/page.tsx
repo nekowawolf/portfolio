@@ -1,8 +1,8 @@
 import { getPortfolio } from "@/services/portfolioService"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { FiArrowLeft, FiExternalLink } from "react-icons/fi"
-import { FaGithub } from "react-icons/fa";
+import { FiArrowLeft } from "react-icons/fi"
+import { FaGithub, FaGlobe } from "react-icons/fa";
 import { ProjectDetails } from "@/types/portfolio"
 import ZoomableImage from "@/components/ZoomableImage"
 import FormattedText from "@/components/FormattedText"
@@ -104,22 +104,46 @@ export default async function ProjectPage({ params }: Props) {
              <h1 className="text-2xl md:text-4xl font-extrabold text-fill-color">
               {project.title}
             </h1>
-            <p className="text-xl text-fill-color/80">
-              {project.description}
-            </p>
+            <FormattedText 
+              text={project.description} 
+              className="text-fill-color/80 text-base whitespace-pre-line" 
+            />
             
             {project.stack && project.stack.length > 0 && (
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5 md:gap-2">
                 {project.stack.map((tech, index) => (
                   <span 
                     key={index}
-                    className="stack-chip text-sm font-medium"
+                    className="stack-chip text-[11px] md:text-sm px-2 py-0.5 md:px-3 md:py-1 font-medium"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
             )}
+
+            <div className="flex items-center gap-4 pt-1 md:pt-2">
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="opacity-70 hover:opacity-100 transition-opacity text-fill-color"
+                >
+                  <FaGlobe className="w-5 h-5" />
+                </a>
+              )}
+              {project.github_url && (
+                <a
+                  href={project.github_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="opacity-70 hover:opacity-100 transition-opacity text-fill-color"
+                >
+                  <FaGithub className="w-5 h-5" />
+                </a>
+              )}
+            </div>
           </div>
         </div>
 
@@ -202,32 +226,7 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         )}
 
-        {/* Action Buttons */}
-        <div className="flex flex-wrap gap-4 pt-8 justify-center">
-          {project.link && (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all text-sm cursor-pointer"
-            >
-              <FiExternalLink className="w-4 h-4" />
-              Visit Project
-            </a>
-          )}
-          
-          {project.github_url && (
-            <a
-              href={project.github_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 card-color hover:bg-white/5 text-fill-color rounded-lg font-medium transition-all text-sm cursor-pointer"
-            >
-              <FaGithub className="w-4 h-4" />
-              View Source
-            </a>
-          )}
-        </div>
+
       </div>
     </main>
   )

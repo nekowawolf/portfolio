@@ -32,11 +32,12 @@ export default function ResumeSection() {
                 )}
 
                 {exp.subjects && exp.subjects.length > 0 && (
-                  <ul className="list-disc pl-5 text-fill-color/70 text-sm mt-2 space-y-1">
-                    {exp.subjects.map((subject, idx) => (
-                      <li key={idx}>{subject}</li>
-                    ))}
-                  </ul>
+                  <div className="text-fill-color/70 text-sm mt-2 space-y-1">
+                    {exp.subjects.map((subject, idx) => {
+                      const formattedText = subject.trim().match(/^[-•*]/) ? subject : `• ${subject}`;
+                      return <FormattedText key={idx} text={formattedText} />;
+                    })}
+                  </div>
                 )}
               </div>
             ))}
@@ -63,11 +64,12 @@ export default function ResumeSection() {
                 )}
 
                 {edu.subjects && edu.subjects.length > 0 && (
-                  <ul className="list-disc pl-5 text-fill-color/70 text-sm mt-2 space-y-1">
-                    {edu.subjects.map((subject, idx) => (
-                      <li key={idx}>{subject}</li>
-                    ))}
-                  </ul>
+                  <div className="text-fill-color/70 text-sm mt-2 space-y-1">
+                    {edu.subjects.map((subject, idx) => {
+                      const formattedText = subject.trim().match(/^[-•*]/) ? subject : `• ${subject}`;
+                      return <FormattedText key={idx} text={formattedText} />;
+                    })}
+                  </div>
                 )}
               </div>
             ))}
