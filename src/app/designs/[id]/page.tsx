@@ -4,6 +4,7 @@ import { notFound } from "next/navigation"
 import { FiArrowLeft, FiExternalLink } from "react-icons/fi"
 import { VisualAsset } from "@/types/portfolio"
 import ZoomableImage from "@/components/ZoomableImage"
+import FormattedText from "@/components/FormattedText"
 
 
 type Props = {
@@ -59,7 +60,7 @@ const AssetSection = ({ title, data }: { title: string, data?: VisualAsset }) =>
           </div>
         )}
         {desc && (
-          <p className="text-fill-color/80 leading-relaxed whitespace-pre-line">{desc}</p>
+          <FormattedText text={desc} className="text-fill-color/80 leading-relaxed whitespace-pre-line" />
         )}
       </div>
     </div>
@@ -157,7 +158,7 @@ export default async function DesignPage({ params }: Props) {
               {design.ss_desc && (
                 <>
                   <h3 className="text-lg font-semibold text-fill-color">Design Description</h3>
-                  <p className="text-fill-color/80 whitespace-pre-line">{design.ss_desc}</p>
+                  <FormattedText text={design.ss_desc} className="text-fill-color/80 whitespace-pre-line" />
                 </>
               )}
             </div>

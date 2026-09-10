@@ -2,6 +2,7 @@
 
 import { usePortfolio } from "@/hooks/usePortfolio"
 import ResumeSkeleton from "@/components/skeletons/ResumeSkeleton"
+import FormattedText from "@/components/FormattedText"
 
 export default function ResumeSection() {
   const { data, loading } = usePortfolio()
@@ -27,9 +28,7 @@ export default function ResumeSection() {
                 </h3>
 
                 {exp.description && (
-                  <p className="text-fill-color/70 text-sm mt-1">
-                    {exp.description}
-                  </p>
+                  <FormattedText text={exp.description} className="text-fill-color/70 text-sm mt-1 whitespace-pre-line" />
                 )}
 
                 {exp.subjects && exp.subjects.length > 0 && (
@@ -60,9 +59,7 @@ export default function ResumeSection() {
                 </h3>
 
                 {edu.description && (
-                  <p className="text-fill-color/70 text-sm mt-1 whitespace-pre-line">
-                    {edu.description}
-                  </p>
+                  <FormattedText text={edu.description} className="text-fill-color/70 text-sm mt-1 whitespace-pre-line" />
                 )}
 
                 {edu.subjects && edu.subjects.length > 0 && (

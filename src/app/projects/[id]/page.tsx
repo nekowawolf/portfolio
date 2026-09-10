@@ -5,6 +5,7 @@ import { FiArrowLeft, FiExternalLink } from "react-icons/fi"
 import { FaGithub } from "react-icons/fa";
 import { ProjectDetails } from "@/types/portfolio"
 import ZoomableImage from "@/components/ZoomableImage"
+import FormattedText from "@/components/FormattedText"
 
 
 type Props = {
@@ -76,9 +77,10 @@ export default async function ProjectPage({ params }: Props) {
               <ZoomableImage src={sanitizeUrl(data?.image_url)} alt={title} imageClassName="w-full h-auto object-cover" />
             </div>
           )}
-          <p className="text-fill-color/80 leading-relaxed whitespace-pre-line">
-            {(data?.description || "").trim()}
-          </p>
+          <FormattedText 
+            text={(data?.description || "").trim()} 
+            className="text-fill-color/80 leading-relaxed whitespace-pre-line" 
+          />
         </div>
       </div>
     )
@@ -179,7 +181,7 @@ export default async function ProjectPage({ params }: Props) {
               {project.ss_desc && (
                 <>
                   <h3 className="text-lg font-semibold text-fill-color">Project Description</h3>
-                  <p className="text-fill-color/80 whitespace-pre-line">{project.ss_desc}</p>
+                  <FormattedText text={project.ss_desc} className="text-fill-color/80 whitespace-pre-line" />
                 </>
               )}
             </div>
