@@ -43,8 +43,8 @@ export const getPortfolio = async (): Promise<Portfolio> => {
 
   return {
     ...portfolio,
-    projects: projects || [],
-    designs: designs || [],
+    projects: (projects || []).reverse(),
+    designs: (designs || []).reverse(),
     certificates: certificates || []
   }
 }
