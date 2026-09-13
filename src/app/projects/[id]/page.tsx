@@ -106,7 +106,7 @@ export default async function ProjectPage({ params }: Props) {
             </h1>
             <FormattedText 
               text={project.description} 
-              className="text-fill-color/80 text-base whitespace-pre-line" 
+              className="text-fill-color/80 text-base whitespace-pre-line md:max-w-xl" 
             />
             
             {project.stack && project.stack.length > 0 && (

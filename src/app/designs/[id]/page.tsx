@@ -96,7 +96,7 @@ export default async function DesignPage({ params }: Props) {
             </h1>
             <FormattedText 
               text={design.description} 
-              className="text-fill-color/80 text-base whitespace-pre-line" 
+              className="text-fill-color/80 text-base whitespace-pre-line md:max-w-xl" 
             />
             
             <div className="flex flex-wrap items-center gap-1.5 md:gap-2">

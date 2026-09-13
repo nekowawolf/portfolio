@@ -15,7 +15,7 @@ export default function ProjectDetailSkeleton() {
 
           <div className="space-y-4">
              <div className={`w-2/3 h-10 md:h-12 rounded-lg ${skelColor}`}></div>
-             <div className="space-y-3 pt-2">
+             <div className="space-y-3 pt-2 md:max-w-xl">
                <div className={`w-full h-4 rounded-md ${skelColor}`}></div>
                <div className={`w-full h-4 rounded-md ${skelColor}`}></div>
                <div className={`w-3/4 h-4 rounded-md ${skelColor}`}></div>
