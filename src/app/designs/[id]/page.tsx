@@ -152,6 +152,8 @@ export default async function DesignPage({ params }: Props) {
                       alt={`Screenshot ${index + 1}`} 
                       className="w-full h-full"
                       imageClassName="w-full h-full object-cover"
+                      images={normalizeScreenshots(design.screenshots)}
+                      currentIndex={index}
                     />
                   </div>
                 ))}

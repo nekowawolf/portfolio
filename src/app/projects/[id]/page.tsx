@@ -163,6 +163,8 @@ export default async function ProjectPage({ params }: Props) {
                       alt={`Screenshot ${index + 1}`} 
                       className="w-full h-full"
                       imageClassName="w-full h-full object-cover"
+                      images={normalizeScreenshots(project.screenshots)}
+                      currentIndex={index}
                     />
                   </div>
                 ))}

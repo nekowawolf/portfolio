@@ -19,7 +19,7 @@ export default function Certificates() {
 
       <div className="relative">
         <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin">
-          {data.certificates.map((cert) => (
+          {data.certificates.map((cert, index) => (
             <div
               key={cert._id}
               className="flex-shrink-0 w-[280px] md:w-[320px] card-color2 rounded-2xl overflow-hidden border border-color group hover:border-blue-500 transition-all duration-300"
@@ -30,6 +30,8 @@ export default function Certificates() {
                   alt={cert.title || 'Certificate'}
                   className="w-full h-full"
                   imageClassName="w-full h-full object-cover"
+                  images={data.certificates.map(c => c.image_url)}
+                  currentIndex={index}
                 />
               </div>
             </div>
