@@ -84,9 +84,9 @@ export default async function DesignPage({ params }: Props) {
         <div className="space-y-6">
           <Link 
             href="/"
-            className="cursor-pointer inline-flex items-center gap-2 text-fill-color/60 hover:text-fill-color transition-colors"
+            className="back-control"
           >
-            <FiArrowLeft className="w-5 h-5" />
+            <FiArrowLeft aria-hidden="true" />
             <span>Back to Portfolio</span>
           </Link>
 
