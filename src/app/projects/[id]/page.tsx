@@ -112,11 +112,11 @@ export default async function ProjectPage({ params }: Props) {
             {project.stack && project.stack.length > 0 && (
               <div className="flex flex-wrap gap-1.5 md:gap-2">
                 {project.stack.map((tech, index) => (
-                  <span 
+                  <span
                     key={index}
-                    className="stack-chip text-[11px] md:text-sm px-2 py-0.5 md:px-3 md:py-1 font-medium"
+                    className="shrink-0 text-[11px] md:text-sm px-2 py-0.5 md:px-3 md:py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20"
                   >
-                    {tech}
+                    <span className="relative top-px">{tech}</span>
                   </span>
                 ))}
               </div>

@@ -101,12 +101,12 @@ export default async function DesignPage({ params }: Props) {
             
             <div className="flex flex-wrap items-center gap-1.5 md:gap-2">
               {design.category && (
-                <span className="stack-chip text-[11px] md:text-sm px-2 py-0.5 md:px-3 md:py-1 font-medium">{design.category}</span>
+                <span className="shrink-0 text-[11px] md:text-sm px-2 py-0.5 md:px-3 md:py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20"><span className="relative top-px">{design.category}</span></span>
               )}
               {design.tools && design.tools.length > 0 && (
                 <>
                   {design.tools.map((tool, idx) => (
-                    <span key={idx} className="stack-chip text-[11px] md:text-sm px-2 py-0.5 md:px-3 md:py-1 font-medium">{tool}</span>
+                    <span key={idx} className="shrink-0 text-[11px] md:text-sm px-2 py-0.5 md:px-3 md:py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20"><span className="relative top-px">{tool}</span></span>
                   ))}
                 </>
               )}

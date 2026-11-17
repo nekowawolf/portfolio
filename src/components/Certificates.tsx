@@ -2,6 +2,7 @@
 
 import { usePortfolio } from "@/hooks/usePortfolio"
 import CertificatesSkeleton from "@/components/skeletons/CertificatesSkeleton"
+import CollectionTotal from "@/components/CollectionTotal"
 import ZoomableImage from "@/components/ZoomableImage"
 
 
@@ -13,9 +14,12 @@ export default function Certificates() {
 
   return (
     <div className="card-color rounded-3xl p-6 md:p-8 border border-color">
-      <h2 className="text-xl md:text-2xl font-bold text-fill-color mb-6">
-        CERTIFICATES
-      </h2>
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-6">
+        <h2 className="text-xl md:text-2xl font-bold text-fill-color">
+          CERTIFICATES
+        </h2>
+        <CollectionTotal count={data.certificates.length} title="Total certificates in this portfolio" />
+      </div>
 
       <div className="relative">
         <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin">

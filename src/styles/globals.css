@@ -11,9 +11,6 @@
   --border-color: #3d4f6f;
   --card-color2: #161e34d7;
   --border-divider: rgba(255, 255, 255, 0.1);
-  --stack-chip-bg: rgba(59, 130, 246, 0.1);
-  --stack-chip-text: #60a5fa;
-  --stack-chip-border: rgba(59, 130, 246, 0.2);
 }
 
 .darkmode {
@@ -23,9 +20,6 @@
   --border-color: #959090;
   --card-color2: rgba(17, 21, 40, 0.05);
   --border-divider: rgba(0, 0, 0, 0.1);
-  --stack-chip-bg: rgba(37, 99, 235, 0.18);
-  --stack-chip-text: #1d4ed8;
-  --stack-chip-border: rgba(37, 99, 235, 0.45);
 }
 
 body {
@@ -95,16 +89,6 @@ body {
 
 .border-color {
   border: 1px solid var(--border-color);
-}
-
-.stack-chip {
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  background-color: var(--stack-chip-bg);
-  color: var(--stack-chip-text);
-  border: 1px solid var(--stack-chip-border);
-  display: inline-flex;
-  align-items: center;
 }
 
 ::-webkit-scrollbar {
